@@ -1,0 +1,27 @@
+# =============================================================================
+# Word 文档模板生成器 - Demo 2 总配置
+# 说明：
+# 1. 本示例演示“基础样式复用 + 多章节拆分”的写法
+# 2. 通过 import_base_config 继承 Demo_01_Basic/Demo_Config.yaml 的页面与样式配置
+# 3. 通过 chapter_configs 按顺序装配多个章节文件
+# 4. 运行：python Temp_General.py Demo_02_Split/Demo_Split_Config.yaml
+# =============================================================================
+
+import_base_config: "../Demo_01_Basic/Demo_Config.yaml"
+
+document_info:
+  title: "YAML 章节拆分写作示例"
+  subtitle: "用论文式章节组织指导说明文档"
+  author: "示例作者-Guide-002"
+  date: "2026-06-11"
+  organization: "Vibe Writing Lab"
+
+generation_config:
+  output_filename: "Format_Reference_Split_Demo.docx"
+
+chapter_configs:
+  - "Demo_Split_Chapter_00_FrontMatter.yaml"
+  - "Demo_Split_Chapter_01_Intro.yaml"
+  - "Demo_Split_Chapter_02_Structure.yaml"
+  - "Demo_Split_Chapter_03_Practice.yaml"
+  - "Demo_Split_Chapter_04_Collaboration.yaml"

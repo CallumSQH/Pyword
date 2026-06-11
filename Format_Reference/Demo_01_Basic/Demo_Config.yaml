@@ -1,0 +1,208 @@
+# =============================================================================
+# Word 文档模板生成器 - 基础配置文件
+# 版本: 1.0
+# 创建日期: 2025-01-05
+# =============================================================================
+# 使用说明：
+# 1. 本文件仅包含文档配置信息（标题、页面设置、样式等）
+# 2. 正文内容请在 Demo_Content.yaml 中编辑
+# 3. 在 Format_Reference 目录运行：
+#    python Temp_General.py Demo_01_Basic/Demo_Config.yaml
+
+# =============================================================================
+# 文档基本信息（必填）
+# =============================================================================
+document_info:
+  title: "毕业论文模板"
+  subtitle: "基于 YAML 配置的文档生成"
+  author: "张三-2022001"
+  date: "2025-01-05"
+  organization: "某某大学"
+
+# =============================================================================
+# 页面设置（可选，有默认值）
+# =============================================================================
+page_setup:
+  page_width: 21
+  page_height: 29.7
+  left_margin: 2.54
+  right_margin: 2.54
+  top_margin: 2.54
+  bottom_margin: 2.54
+  gutter: 0.5
+  header_distance: 1.5
+  footer_distance: 1.75
+
+# =============================================================================
+# 表格样式配置
+# =============================================================================
+table:
+  # 表头样式（headers行，不加粗）
+  header:
+    font: "宋体"
+    size: 10.5
+    bold: False
+  # 表格内容样式
+  content:
+    font: "宋体"
+    size: 10.5
+    bold: False
+  # 表格标题样式（表序号+表题，五号宋体加粗）
+  table_num:
+    font: "宋体"
+    size: 10.5
+    bold: True
+  caption:
+    font: "宋体"
+    size: 10.5
+    bold: True
+  # 是否在表格上方显示标题（True）或下方（False）
+  caption_above: True
+  # 表格与标题之间的间距
+  caption_spacing: 3
+
+# =============================================================================
+# 文本样式配置（标题、正文、参考文献等）
+# =============================================================================
+text_styles:
+  # 正文样式（小四号宋体，西文Times New Roman）
+  body:
+    font: "宋体"
+    english_font: "Times New Roman"
+    size: 12
+    bold: False
+    first_line_indent: 24
+    line_spacing: 1.5
+    space_before: 0
+    space_after: 0
+
+  # 一级标题样式（小二号黑体，西文Times New Roman）
+  heading1:
+    font: "黑体"
+    english_font: "Times New Roman"
+    size: 15
+    bold: True
+    first_line_indent: 0
+    line_spacing: 1.5
+    space_before: 24
+    space_after: 18
+
+  # 二级标题样式（三号黑体，西文Times New Roman）
+  heading2:
+    font: "黑体"
+    english_font: "Times New Roman"
+    size: 14
+    bold: True
+    first_line_indent: 0
+    line_spacing: 1.5
+    space_before: 18
+    space_after: 12
+
+  # 三级标题样式（四号宋体，西文Times New Roman）
+  heading3:
+    font: "黑体"
+    english_font: "Times New Roman"
+    size: 13
+    bold: True
+    first_line_indent: 21.6
+    line_spacing: 1.5
+    space_before: 12
+    space_after: 6
+
+  # 参考文献样式（五号宋体，西文Times New Roman，顶格无缩进）
+  reference:
+    font: "宋体"
+    english_font: "Times New Roman"
+    size: 10.5
+    bold: False
+    first_line_indent: 0
+    hanging_indent: 0
+    line_spacing: 1.5
+    space_before: 0
+    space_after: 0
+
+  # 参考文献标题样式（黑体，加粗，三号）
+  reference_title:
+    font: "黑体"
+    english_font: "Times New Roman"
+    size: 16
+    bold: True
+    first_line_indent: 0
+    line_spacing: 1.5
+    space_before: 24
+    space_after: 18
+
+  # 全文大标题样式（一号黑体，居中）
+  global_title:
+    font: "黑体"
+    english_font: "Times New Roman"
+    size: 22
+    bold: True
+    first_line_indent: 0
+    line_spacing: 1.5
+    space_before: 24
+    space_after: 18
+    alignment: "center"
+
+# =============================================================================
+# 图片样式配置
+# =============================================================================
+image:
+  # 图像尺寸计算相关配置
+  page_width: 595
+  page_height: 842
+  page_margins: [ 110, 110 ]
+  spacing: 5
+  min_width: 50
+  max_width: 5000
+  # 图题样式（表序号+表题，五号宋体加粗）
+  figure:
+    font: "宋体"
+    english_font: "Times New Roman"
+    size: 10.5
+    bold: True
+    line_spacing: 1.5
+    space_before: 0
+    space_after: 6
+  # 图像与图题之间的间距
+  caption_spacing: 0
+  # 多行图像之间的间距
+  between_images_spacing: 1
+
+# =============================================================================
+# 上下标语法说明
+# =============================================================================
+# 在正文中使用上下标功能，通过以下标签语法实现：
+#
+# 下标语法：<sub>内容</sub>
+#   示例：H<sub>2</sub>O  显示为 H₂O（水分子）
+#   示例：CO<sub>2</sub>  显示为 CO₂（二氧化碳）
+#
+# 上标语法：<sup>内容</sup>
+#   示例：H<sup>+</sup>   显示为 H⁺（氢离子）
+#   示例：E=mc<sup>2</sup> 显示为 E=mc²（质能方程）
+#
+# 混合使用：
+#   示例：SO<sub>4</sub><sup>2-</sup> 显示为 SO₄²⁻（硫酸根离子）
+#
+# 与引用标注结合：
+#   示例：水的化学式为H<sub>2</sub>O[1]
+#
+# 注意事项：
+# 1. 标签必须成对出现，不能嵌套使用相同标签
+# 2. <sub> 和 <sup> 可以混合使用
+# 3. 参考文献引用 [数字] 会自动设置为上标格式
+# =============================================================================
+
+# =============================================================================
+# 引用外部内容文件（必填）
+# =============================================================================
+chapter_configs:
+- "Demo_Content.yaml"
+
+# =============================================================================
+# 直接配置sections内容（可选，与二选一）
+# 注意：使用 chapter_configs 时，此处留空 []
+# =============================================================================
+content_structure:
+  sections: []
